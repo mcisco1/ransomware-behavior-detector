@@ -1,3 +1,6 @@
+> **Python 3.11+ required.** Run `pip install -r requirements.txt` then `python setup_sandbox.py` to get started.
+
+
 # Ransomware Behavior Simulator & Detector
 
 A two-part offensive/defensive security project that demonstrates real-world ransomware behavioral analysis, detection, and automated incident response — built entirely in Python with a real-time web dashboard.
