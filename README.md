@@ -9,6 +9,14 @@ A two-part offensive/defensive security project that demonstrates real-world ran
 
 **Part B** is a detection engine running as a daemon that monitors filesystem events in real time using `watchdog`, applies behavioral heuristics (rapid rename detection, Shannon entropy analysis, ransom note content scanning, YARA rule matching, abnormal write volume tracking), computes a bounded threat score using a windowed scoring model, identifies and kills the offending process via `psutil`, generates a structured JSON incident report, and rolls back all changes from a pre-attack shadow copy. A live web dashboard shows the detection timeline, captured process tree, threat score, and kill decisions as they happen.
 
+
+
+# TESTS/SCREENSHOTS of the project working in real time. Only for demonstration purposes
+
+
+TEST 1: CLEAN SANDBOX. Sandbox directory containing 14 target files before the attack. Files represent common document types — spreadsheets, configs, source code, PDFs.
+
+Sandbox directory containing 14 target files before the attack. Files represent common document types — spreadsheets, configs, source code, PDFs.
 ---
 
 ## Architecture
