@@ -20,6 +20,40 @@ TEST 1: CLEAN SANDBOX.
 
 
 Sandbox directory containing 14 target files before the attack. Files represent common document types — spreadsheets, configs, source code, PDFs.
+
+
+# TEST 2 DETECTOR BASELINE:
+<img width="2239" height="1305" alt="detector baseline" src="https://github.com/user-attachments/assets/f26f43c3-9066-4ea6-9c2f-6409f99d9c6f" />
+
+Detector fully initialized — shadow snapshot taken, SHA-256 manifest written, entropy baseline built for all 14 files. Filesystem watcher armed and monitoring.
+
+# TEST 3 MID ATTACK DASHBOARD:
+
+
+<img width="2237" height="1308" alt="mid attack" src="https://github.com/user-attachments/assets/73c51277-9326-479c-aa93-9a8096e322ec" />
+
+Live dashboard mid-attack showing RENAME_ENCRYPTED and ENTROPY_SPIKE events stacking in real time. Threat score climbing as behavioral signals accumulate within the 5-second detection window.
+
+# TEST 4-5 KILL MOMENT
+
+
+<img width="2093" height="798" alt="s5" src="https://github.com/user-attachments/assets/ba4c91e1-94e7-49e6-bd42-43fdbfedfe0e" />
+
+<img width="2239" height="1311" alt="s7" src="https://github.com/user-attachments/assets/c4fe8c37-e035-4578-b0b2-7701791987b6" />
+
+
+
+Detector identifies the simulator process via PID file, captures the process tree, and terminates python.exe (PID 27208). Rollback completes 4 operations and a structured JSON incident report is written — all within seconds of threshold being crossed.
+
+# TEST 6 STEALTH MODE:
+
+<img width="2239" height="1308" alt="stealth" src="https://github.com/user-attachments/assets/0a19f5d2-114c-4d8d-9d3a-c17acf855c36" />
+
+Stealth mode reaches a threat score of 20 but never crosses the 50-point kill threshold — the attack completes undetected. Demonstrates the adversarial gap between evasion and behavioral detection that real ransomware authors exploit against EDR systems.
+
+
+
+
 ---
 
 ## Architecture
