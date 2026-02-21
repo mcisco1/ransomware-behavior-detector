@@ -14,7 +14,10 @@ A two-part offensive/defensive security project that demonstrates real-world ran
 # TESTS/SCREENSHOTS of the project working in real time. Only for demonstration purposes
 
 
-TEST 1: CLEAN SANDBOX. Sandbox directory containing 14 target files before the attack. Files represent common document types — spreadsheets, configs, source code, PDFs.
+TEST 1: CLEAN SANDBOX.
+
+<img width="977" height="508" alt="cleansandbox" src="https://github.com/user-attachments/assets/0bbea02b-eae5-4735-856c-8938c8ef9fa4" />
+
 
 Sandbox directory containing 14 target files before the attack. Files represent common document types — spreadsheets, configs, source code, PDFs.
 ---
