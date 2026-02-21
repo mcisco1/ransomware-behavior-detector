@@ -1,0 +1,24 @@
+services:
+  detector:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - sandbox_data:/app/sandbox
+      - shadow_data:/app/.shadow
+      - ./reports:/app/reports
+      - ./logs:/app/logs
+
+  simulator:
+    build: .
+    command: python run_simulator.py --speed fast
+    depends_on:
+      - detector
+    volumes:
+      - sandbox_data:/app/sandbox
+    profiles:
+      - attack
+
+volumes:
+  sandbox_data:
+  shadow_data:

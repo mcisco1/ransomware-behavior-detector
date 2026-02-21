@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ransomware Detection Engine</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <h1>RANSOMWARE DETECTION ENGINE</h1>
+        <span class="header-sub">Real-Time Behavioral Analysis &amp; Automated Response</span>
+    </div>
+    <div class="header-right">
+        <div class="status-badge" id="status-badge">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="status-text">INITIALIZING</span>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Row 1: Threat Score + Stats + Detection Reasons -->
+    <div class="row row-top">
+        <div class="card threat-card">
+            <div class="card-header">THREAT SCORE</div>
+            <div class="score-container">
+                <div class="score-bar-track">
+                    <div class="score-bar-fill" id="score-bar"></div>
+                </div>
+                <div class="score-number" id="score-value">0</div>
+                <div class="score-label"><span id="score-threshold">/ 50 threshold</span></div>
+            </div>
+            <div class="score-rates">
+                <div class="rate-item">
+                    <span class="rate-label">Rename Rate</span>
+                    <span class="rate-value" id="rename-rate">0.0/s</span>
+                </div>
+                <div class="rate-item">
+                    <span class="rate-label">Write Rate</span>
+                    <span class="rate-value" id="write-rate">0.0/s</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card reasons-card">
+            <div class="card-header">DETECTION TRIGGERS</div>
+            <div class="reasons-list" id="reasons-list">
+                <div class="empty-state">No detections yet</div>
+            </div>
+        </div>
+
+        <div class="card stats-card">
+            <div class="card-header">EVENT COUNTS</div>
+            <div class="stat-grid" id="stat-grid">
+                <div class="stat-item">
+                    <div class="stat-number" id="stat-total">0</div>
+                    <div class="stat-label">Total</div>
+                </div>
+                <div class="stat-item critical">
+                    <div class="stat-number" id="stat-critical">0</div>
+                    <div class="stat-label">Critical</div>
+                </div>
+                <div class="stat-item high">
+                    <div class="stat-number" id="stat-high">0</div>
+                    <div class="stat-label">High</div>
+                </div>
+                <div class="stat-item medium">
+                    <div class="stat-number" id="stat-medium">0</div>
+                    <div class="stat-label">Medium</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 2: Timeline -->
+    <div class="row">
+        <div class="card timeline-card">
+            <div class="card-header">DETECTION TIMELINE</div>
+            <div class="chart-wrap">
+                <canvas id="timeline-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 3: Process Tree + Kill Decisions -->
+    <div class="row row-bottom">
+        <div class="card process-card">
+            <div class="card-header">PROCESS TREE</div>
+            <div class="process-tree" id="process-tree">
+                <div class="empty-state">Waiting for threat identification...</div>
+            </div>
+        </div>
+
+        <div class="card kill-card">
+            <div class="card-header">KILL DECISIONS</div>
+            <div class="kill-log" id="kill-log">
+                <div class="empty-state">No kill decisions</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Row 4: Full Event Log -->
+    <div class="row">
+        <div class="card log-card">
+            <div class="card-header">
+                EVENT LOG
+                <span class="log-count" id="log-count">0 events</span>
+            </div>
+            <div class="event-log" id="event-log"></div>
+        </div>
+    </div>
+</main>
+
+<script src="/static/main.js"></script>
+</body>
+</html>
