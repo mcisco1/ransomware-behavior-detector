@@ -256,3 +256,6 @@ ransomware-sim-detector/
 - Full-stack security dashboard with live SSE event streaming
 - XSS-safe DOM rendering and SSE reconnection handling
 - Comprehensive test coverage across all subsystems
+
+
+# NOTE, AI used in some parts of README to help depict architecture and speed things up when writing purpose and technologies needed. Most logic/functionality was done by me
